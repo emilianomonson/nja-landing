@@ -1,84 +1,122 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Services from '../components/Services.astro';
+import TechMarquee from '../components/TechMarquee.astro';
 ---
 
-<Layout title="NJA TECH | High Performance Software">
+<Layout title="NJA TECH | Ingeniería de Software & Ecosistemas Digitales">
 	<main class="max-w-6xl mx-auto px-6">
 
 		<section class="h-screen flex flex-col justify-center items-start relative">
-			<div class="flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/2 mb-10">
-				<div class="w-1.5 h-1.5 rounded-full bg-nja-green animate-pulse"></div>
-				<span class="text-[9px] tracking-[0.3em] font-bold uppercase text-gray-400">System Status: Online</span>
+			<div class="reveal opacity-0 translate-y-10 flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.02] mb-12">
+				<div class="w-1.5 h-1.5 rounded-full bg-nja-green shadow-[0_0_12px_rgba(0,255,65,0.5)] animate-pulse"></div>
+				<span class="text-[9px] tracking-[0.4em] font-bold uppercase text-gray-400 italic text-left">System Status: Online</span>
 			</div>
 
-			<h1 class="text-6xl md:text-[140px] font-extrabold tracking-tighter leading-[0.8] mb-12">
-				NJA <span class="text-transparent bg-clip-text bg-gradient-to-r from-nja-green via-nja-cyan to-white">TECH</span>
-			</h1>
+			<div class="reveal opacity-0 translate-y-10 mb-14 text-left">
+				<h1 class="text-7xl md:text-[150px] font-extrabold tracking-[0.02em] leading-[0.8] uppercase text-left">
+					NJA <span class="text-transparent bg-clip-text bg-gradient-to-r from-nja-green via-nja-cyan to-white">TECH</span>
+				</h1>
+			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-end">
-				<p class="text-lg md:text-2xl text-gray-500 font-light leading-tight">
-					Desarrollamos ecosistemas digitales <br/>
-					<span class="text-white italic">escalables, eficientes y robustos.</span>
+			<div class="reveal opacity-0 translate-y-10 flex flex-col md:flex-row justify-between items-end w-full gap-12">
+				<p class="text-xl md:text-3xl text-gray-500 font-light leading-tight max-w-xl text-left">
+					Desarrollamos herramientas de <br/>
+					<span class="text-white italic font-normal text-left">visualización, gestión y automatización para tu negocio.</span>
 				</p>
-				<div class="flex flex-col md:items-end gap-4">
-					<a href="#proyectos" class="text-xs font-bold uppercase tracking-[0.4em] text-white hover:text-nja-green transition-all flex items-center gap-4 group">
-						Proyectos Seleccionados
-						<span class="group-hover:translate-x-2 transition-transform italic text-lg">→</span>
-					</a>
-					<div class="h-[1px] w-48 bg-white/10"></div>
+				<a href="#contacto" class="group text-[10px] font-black uppercase tracking-[0.5em] text-white flex items-center gap-4 hover:text-nja-green transition-all">
+					Iniciar Proyecto <span class="text-2xl group-hover:translate-x-3 transition-transform duration-500 italic text-left">→</span>
+				</a>
+			</div>
+		</section>
+
+		<section id="soluciones" class="py-32 border-t border-white/5">
+			<div class="text-left mb-24 reveal opacity-0 text-left">
+				<h2 class="text-[10px] tracking-[0.5em] font-bold uppercase text-nja-green mb-4 text-left">// Business Solutions</h2>
+				<p class="text-5xl font-extrabold tracking-tighter uppercase italic text-white leading-none text-left">
+					Transformamos procesos en <br/> <span class="text-gray-600 text-left">ventajas competitivas.</span>
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+				<div class="group p-10 bg-white/[0.01] border border-white/5 rounded-[2.5rem] hover:border-nja-green/30 transition-all duration-500 text-left">
+					<div class="w-12 h-12 mb-8 flex items-center justify-center rounded-2xl bg-white/5 group-hover:bg-nja-green/10 transition-colors">
+						<span class="text-nja-green text-xl italic font-black">01</span>
+					</div>
+					<h4 class="text-2xl font-bold uppercase italic mb-4 text-left text-white">Ecosistemas Web</h4>
+					<p class="text-gray-500 text-sm leading-relaxed mb-6 text-left">Landings de alto impacto y plataformas E-commerce para convertir visitantes en clientes.</p>
+					<span class="text-[8px] font-bold tracking-[0.3em] text-nja-green uppercase text-left italic">Astro // React // Tailwind</span>
+				</div>
+
+				<div class="group p-10 bg-white/[0.01] border border-white/5 rounded-[2.5rem] hover:border-nja-cyan/30 transition-all duration-500 text-left">
+					<div class="w-12 h-12 mb-8 flex items-center justify-center rounded-2xl bg-white/5 group-hover:bg-nja-cyan/10 transition-colors">
+						<span class="text-nja-cyan text-xl italic font-black">02</span>
+					</div>
+					<h4 class="text-2xl font-bold uppercase italic mb-4 text-left text-white">Sistemas de Stock</h4>
+					<p class="text-gray-500 text-sm leading-relaxed mb-6 text-left">Control de inventario robusto para evitar quiebres y pérdidas operativas.</p>
+					<span class="text-[8px] font-bold tracking-[0.3em] text-nja-cyan uppercase text-left italic">Spring Boot // Postgres // Angular</span>
+				</div>
+
+				<div class="group p-10 bg-white/[0.01] border border-white/5 rounded-[2.5rem] hover:border-white/30 transition-all duration-500 text-left">
+					<div class="w-12 h-12 mb-8 flex items-center justify-center rounded-2xl bg-white/5 group-hover:bg-white/10 transition-colors">
+						<span class="text-white text-xl italic font-black">03</span>
+					</div>
+					<h4 class="text-2xl font-bold uppercase italic mb-4 text-left text-white">Facturación Pro</h4>
+					<p class="text-gray-500 text-sm leading-relaxed mb-6 text-left">Software financiero para presupuestos y facturación con reportes en tiempo real.</p>
+					<span class="text-[8px] font-bold tracking-[0.3em] text-white uppercase text-left italic">Cloud Solutions // PDF Engine</span>
 				</div>
 			</div>
 		</section>
 
-		<section id="proyectos" class="py-32 border-t border-white/5">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-				<a href="https://github.com/emimo/Gestion-Pedidos-FullStack" target="_blank" class="group block">
-					<div class="relative aspect-[16/10] bg-[#080808] border border-white/5 rounded-3xl mb-8 overflow-hidden flex items-center justify-center transition-all group-hover:border-nja-green/20">
-						<div class="absolute inset-0 bg-gradient-to-tr from-nja-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-						<span class="text-[120px] font-black text-white/[0.02] group-hover:text-nja-green/[0.05] transition-all tracking-tighter italic">01</span>
-					</div>
-					<div class="flex justify-between items-start">
-						<div>
-							<h3 class="text-xl font-bold uppercase tracking-tight mb-2">Gestión de Pedidos</h3>
-							<div class="flex gap-3">
-								<span class="text-[9px] px-2 py-1 border border-white/10 rounded-full text-gray-500 font-bold uppercase">Spring Boot</span>
-								<span class="text-[9px] px-2 py-1 border border-white/10 rounded-full text-gray-500 font-bold uppercase">Angular</span>
-							</div>
+		<TechMarquee />
+
+		<section id="contacto" class="py-40 reveal opacity-0 translate-y-10 border-t border-white/5">
+			<div class="max-w-2xl mx-auto text-center">
+				<p class="text-4xl font-extrabold tracking-tighter uppercase italic text-white mb-16 text-center">¿LISTO PARA <span class="text-nja-green text-center">ESCALAR?</span></p>
+
+				<form action="https://formspree.io/f/xreabrne" method="POST" class="space-y-10 text-left">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+						<div class="flex flex-col gap-3 text-left">
+							<label class="text-[9px] text-gray-600 font-bold uppercase tracking-[0.4em] text-left italic">Nombre</label>
+							<input
+								type="text"
+								name="nombre"
+								placeholder="EJ. EMILIANO"
+								required
+								class="bg-transparent border-b border-white/10 py-4 outline-none focus:border-nja-green transition-colors font-mono text-xs uppercase text-white leading-normal text-left"
+							/>
 						</div>
-						<span class="text-gray-700 font-mono text-xs uppercase tracking-widest pt-2">Full-Stack System</span>
+						<div class="flex flex-col gap-3 text-left">
+							<label class="text-[9px] text-gray-600 font-bold uppercase tracking-[0.4em] text-left italic">Email Contacto</label>
+							<input
+								type="email"
+								name="email"
+								placeholder="TU@EMAIL.COM"
+								required
+								class="bg-transparent border-b border-white/10 py-4 outline-none focus:border-nja-green transition-colors font-mono text-xs uppercase text-white leading-normal text-left"
+							/>
+						</div>
 					</div>
-				</a>
-
-				<div class="opacity-30 group cursor-not-allowed">
-					<div class="aspect-[16/10] bg-[#080808] border border-white/5 rounded-3xl mb-8 flex items-center justify-center italic text-gray-800 text-sm">
-						Building SaaS Template...
+					<div class="flex flex-col gap-3 text-left">
+						<label class="text-[9px] text-gray-600 font-bold uppercase tracking-[0.4em] text-left italic">Idea del Proyecto</label>
+						<textarea
+							name="mensaje"
+							placeholder="DESCRIBÍ TU NECESIDAD EMPRESARIAL..."
+							rows="4"
+							required
+							class="bg-transparent border-b border-white/10 py-4 outline-none focus:border-nja-green transition-colors font-mono text-xs uppercase text-white leading-relaxed resize-none text-left"
+						></textarea>
 					</div>
-					<h3 class="text-xl font-bold uppercase tracking-tight mb-2 italic">E-commerce Engine</h3>
-					<p class="text-[10px] text-gray-600 font-mono uppercase tracking-[0.2em]">Future Release // 2026</p>
-				</div>
+					<button type="submit" class="w-full mt-10 py-6 bg-white text-black font-black uppercase text-[10px] tracking-[0.6em] hover:bg-nja-green transition-all duration-500 active:scale-[0.98]">
+						SOLICITAR PRESUPUESTO // →
+					</button>
+				</form>
 			</div>
 		</section>
 
-		<Services />
-
-		<section id="contacto" class="py-40 flex flex-col items-center">
-			<div class="w-full max-w-2xl p-12 bg-[#0a0a0a] border border-white/5 rounded-[2rem] text-center">
-				<h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6">¿Listo para escalar?</h2>
-				<p class="text-gray-500 mb-12 text-lg">Hablemos sobre tu próximo ecosistema digital.</p>
-				<a href="mailto:info@njatech.solutions" class="inline-block px-12 py-5 bg-white text-black font-black uppercase text-xs tracking-[0.4em] rounded-full hover:bg-nja-green transition-all hover:scale-105 active:scale-95">
-					Iniciar Proyecto
-				</a>
-			</div>
-		</section>
-
-		<footer class="py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] font-bold tracking-[0.4em] text-gray-600 uppercase">
+		<footer class="py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] font-bold tracking-[0.4em] text-gray-600 uppercase italic">
 			<p>© NJA TECH SOLUTIONS // RÍO TERCERO</p>
-			<div class="flex gap-10 mt-6 md:mt-0">
-				<a href="https://github.com/emimo" class="hover:text-white transition-colors">GitHub</a>
-				<a href="https://instagram.com/reflexsysok/" class="hover:text-white transition-colors">Instagram</a>
-				<a href="#" class="hover:text-white transition-colors">LinkedIn</a>
-			</div>
+			<p>njatechinfo@gmail.com</p>
 		</footer>
 	</main>
 </Layout>

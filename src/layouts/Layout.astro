@@ -2,33 +2,57 @@
 interface Props {
 	title: string;
 }
+
 const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-[#050505] text-white font-['Inter'] selection:bg-nja-green/30 antialiased overflow-x-hidden">
-		<div class="fixed inset-0 z-[-1]">
+	<body class="bg-[#050505] text-white font-['Inter'] antialiased overflow-x-hidden">
+
+		<div class="fixed inset-0 z-0 pointer-events-none">
 			<div class="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:32px_32px]"></div>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,65,0.05),transparent_50%)]"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,65,0.03),transparent_50%)]"></div>
 		</div>
 
-		<slot />
+		<div class="relative z-10">
+			<slot />
+		</div>
+
+		<script>
+			const observerOptions = { threshold: 0.1 };
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('opacity-100', 'translate-y-0');
+						entry.target.classList.remove('opacity-0', 'translate-y-10');
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		</script>
 
 		<style is:global>
-			:root {
-				--nja-green: #00FF41;
-				--nja-cyan: #00f2fe;
+			:root { --nja-green: #00FF41; --nja-cyan: #00f2fe; }
+			.reveal { transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); }
+
+			/* Corrección de alineación del cursor */
+			input, textarea {
+				line-height: normal !important;
+				vertical-align: middle;
 			}
-			/* Scrollbar Minimalista */
-			::-webkit-scrollbar { width: 5px; }
+
+			::-webkit-scrollbar { width: 4px; }
 			::-webkit-scrollbar-track { background: #050505; }
-			::-webkit-scrollbar-thumb { background: #111; border-radius: 10px; }
+			::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 10px; }
 			::-webkit-scrollbar-thumb:hover { background: var(--nja-green); }
 		</style>
 	</body>

@@ -3,54 +3,64 @@ const services = [
   {
     id: "01",
     title: "Desarrollo Full-Stack",
-    description: "Arquitecturas robustas con Spring Boot y frontends reactivos en Angular. Especializado en sistemas de gestión escalables.",
+    description: "Sistemas robustos con Spring Boot y frontends reactivos en Angular. Foco en escalabilidad y código limpio.",
     tech: "JAVA • SPRING • ANGULAR",
     class: "md:col-span-2"
   },
   {
     id: "02",
     title: "SaaS & MVP",
-    description: "Despliegue rápido de productos digitales con Astro y arquitecturas serverless.",
+    description: "Lanzamiento rápido de productos digitales con arquitecturas modernas y serverless.",
     tech: "ASTRO • CLOUD",
     class: "md:col-span-1"
   },
   {
     id: "03",
     title: "UX & Performance",
-    description: "Interfaces ultra rápidas con enfoque en Core Web Vitals y conversión.",
+    description: "Interfaces optimizadas para Core Web Vitals, garantizando velocidad y retención.",
     tech: "TAILWIND • SEO",
     class: "md:col-span-1"
   },
   {
     id: "04",
     title: "API Design",
-    description: "Modelado de bases de datos relacionales y APIs REST eficientes.",
-    tech: "SQL • REST",
+    description: "Modelado de datos y APIs REST seguras para ecosistemas complejos.",
+    tech: "SQL • REST API",
     class: "md:col-span-2"
   }
 ];
 ---
 
 <section id="servicios" class="py-32">
-  <div class="mb-16">
-    <h2 class="text-xs tracking-[0.5em] font-bold uppercase text-nja-green mb-4">// Capabilities</h2>
-    <p class="text-4xl font-extrabold tracking-tighter">Soluciones de <span class="text-gray-600">Software.</span></p>
+  <div class="mb-20 reveal opacity-0 translate-y-10">
+    <h2 class="text-[10px] tracking-[0.5em] font-bold uppercase text-nja-green mb-4">// Capabilities</h2>
+    <p class="text-4xl md:text-6xl font-extrabold tracking-tighter italic">
+      Soluciones de <span class="text-gray-700">Software.</span>
+    </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {services.map(service => (
-      <div class={`group relative p-8 bg-[#0a0a0a] border border-white/5 rounded-2xl overflow-hidden hover:border-nja-green/30 transition-all duration-500 ${service.class}`}>
-        <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-20 transition-opacity">
-          <span class="text-7xl font-black italic">{service.id}</span>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {services.map((service, index) => (
+      <div
+        class={`group relative p-10 bg-gradient-to-br from-[#0a0a0a] to-[#050505] border border-white/5 rounded-[2rem] overflow-hidden hover:border-nja-green/30 transition-all duration-700 reveal opacity-0 translate-y-10 ${service.class}`}
+        style={`transition-delay: ${index * 150}ms`}
+      >
+        <div class="absolute -bottom-4 -right-4 opacity-[0.02] group-hover:opacity-[0.08] transition-opacity duration-700">
+          <span class="text-[160px] font-black italic leading-none">{service.id}</span>
         </div>
-        <div class="relative z-10">
-          <h3 class="text-lg font-bold mb-4 tracking-tight uppercase text-nja-cyan">{service.title}</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-8 max-w-sm">
+
+        <div class="relative z-10 h-full flex flex-col">
+          <h3 class="text-xl font-bold mb-4 tracking-tight uppercase text-nja-cyan group-hover:text-nja-green transition-colors duration-500">
+            {service.title}
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-10 max-w-sm font-light">
             {service.description}
           </p>
-          <p class="text-[9px] font-mono tracking-[0.3em] text-nja-green/60 uppercase">
-            {service.tech}
-          </p>
+          <div class="mt-auto">
+            <span class="text-[9px] font-mono tracking-[0.4em] text-white/20 uppercase group-hover:text-nja-green/60 transition-colors">
+              {service.tech}
+            </span>
+          </div>
         </div>
       </div>
     ))}
