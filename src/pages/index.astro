@@ -3,96 +3,82 @@ import Layout from '../layouts/Layout.astro';
 import Services from '../components/Services.astro';
 ---
 
-<Layout title="NJA TECH SOLUTIONS | Software Development">
+<Layout title="NJA TECH | High Performance Software">
 	<main class="max-w-6xl mx-auto px-6">
 
-		<section class="h-[90vh] flex flex-col justify-center items-start relative">
-			<div class="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/5 mb-10">
-				<div class="w-2 h-2 rounded-full bg-nja-green shadow-[0_0_10px_#00FF41]"></div>
-				<span class="text-[10px] tracking-[0.2em] font-bold uppercase text-gray-300">Available for projects</span>
+		<section class="h-screen flex flex-col justify-center items-start relative">
+			<div class="flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/2 mb-10">
+				<div class="w-1.5 h-1.5 rounded-full bg-nja-green animate-pulse"></div>
+				<span class="text-[9px] tracking-[0.3em] font-bold uppercase text-gray-400">System Status: Online</span>
 			</div>
 
-			<h1 class="text-5xl md:text-[120px] font-extrabold tracking-tighter leading-[0.85] mb-8 uppercase">
-				NJA <span class="text-transparent bg-clip-text bg-gradient-to-r from-nja-green to-nja-cyan">TECH</span>
+			<h1 class="text-6xl md:text-[140px] font-extrabold tracking-tighter leading-[0.8] mb-12">
+				NJA <span class="text-transparent bg-clip-text bg-gradient-to-r from-nja-green via-nja-cyan to-white">TECH</span>
 			</h1>
 
-			<div class="flex flex-col md:flex-row md:items-center gap-8 w-full">
-				<p class="text-lg md:text-xl text-gray-400 max-w-md font-light leading-relaxed">
-					Desarrollo de ecosistemas digitales avanzados con <span class="text-white">Angular</span> y <span class="text-white">Spring Boot</span>.
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-end">
+				<p class="text-lg md:text-2xl text-gray-500 font-light leading-tight">
+					Desarrollamos ecosistemas digitales <br/>
+					<span class="text-white italic">escalables, eficientes y robustos.</span>
 				</p>
-				<div class="h-[1px] flex-grow bg-white/5 hidden md:block"></div>
-				<a href="#proyectos" class="group flex items-center gap-4 text-sm font-bold uppercase tracking-widest hover:text-nja-green transition-colors">
-					Explorar Proyectos
-					<span class="text-xl group-hover:translate-x-2 transition-transform">→</span>
-				</a>
+				<div class="flex flex-col md:items-end gap-4">
+					<a href="#proyectos" class="text-xs font-bold uppercase tracking-[0.4em] text-white hover:text-nja-green transition-all flex items-center gap-4 group">
+						Proyectos Seleccionados
+						<span class="group-hover:translate-x-2 transition-transform italic text-lg">→</span>
+					</a>
+					<div class="h-[1px] w-48 bg-white/10"></div>
+				</div>
 			</div>
 		</section>
 
-		<section id="proyectos" class="py-20 border-y border-white/5">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-				<a href="https://github.com/emimo/Gestion-Pedidos-FullStack" target="_blank" class="group cursor-pointer block">
-					<div class="relative aspect-video bg-[#0a0a0a] border border-white/10 rounded-sm mb-6 overflow-hidden flex items-center justify-center">
-						<div class="absolute inset-0 bg-gradient-to-br from-nja-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-						<span class="text-gray-800 font-black text-5xl tracking-tighter group-hover:text-nja-green/20 transition-colors">01</span>
+		<section id="proyectos" class="py-32 border-t border-white/5">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+				<a href="https://github.com/emimo/Gestion-Pedidos-FullStack" target="_blank" class="group block">
+					<div class="relative aspect-[16/10] bg-[#080808] border border-white/5 rounded-3xl mb-8 overflow-hidden flex items-center justify-center transition-all group-hover:border-nja-green/20">
+						<div class="absolute inset-0 bg-gradient-to-tr from-nja-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+						<span class="text-[120px] font-black text-white/[0.02] group-hover:text-nja-green/[0.05] transition-all tracking-tighter italic">01</span>
 					</div>
-					<h3 class="text-sm font-bold tracking-widest uppercase mb-2">Gestión de Pedidos Full-Stack</h3>
-					<p class="text-xs text-gray-500 font-mono italic">JAVA // SPRING BOOT // ANGULAR // SQL</p>
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-xl font-bold uppercase tracking-tight mb-2">Gestión de Pedidos</h3>
+							<div class="flex gap-3">
+								<span class="text-[9px] px-2 py-1 border border-white/10 rounded-full text-gray-500 font-bold uppercase">Spring Boot</span>
+								<span class="text-[9px] px-2 py-1 border border-white/10 rounded-full text-gray-500 font-bold uppercase">Angular</span>
+							</div>
+						</div>
+						<span class="text-gray-700 font-mono text-xs uppercase tracking-widest pt-2">Full-Stack System</span>
+					</div>
 				</a>
 
-				<div class="group cursor-default opacity-40">
-					<div class="aspect-video bg-[#0a0a0a] border border-white/10 rounded-sm mb-6 flex items-center justify-center italic text-gray-700 text-xs">
-						Próximo Proyecto SaaS...
+				<div class="opacity-30 group cursor-not-allowed">
+					<div class="aspect-[16/10] bg-[#080808] border border-white/5 rounded-3xl mb-8 flex items-center justify-center italic text-gray-800 text-sm">
+						Building SaaS Template...
 					</div>
-					<h3 class="text-sm font-bold tracking-widest uppercase mb-2">E-commerce Template</h3>
-					<p class="text-xs text-gray-500 font-mono italic">ASTRO // TAILWIND // STRIPE</p>
+					<h3 class="text-xl font-bold uppercase tracking-tight mb-2 italic">E-commerce Engine</h3>
+					<p class="text-[10px] text-gray-600 font-mono uppercase tracking-[0.2em]">Future Release // 2026</p>
 				</div>
 			</div>
 		</section>
 
 		<Services />
 
-		<section id="contacto" class="py-32 border-t border-white/5">
-			<div class="max-w-xl mx-auto text-center">
-				<h2 class="text-xs tracking-[0.4em] font-bold uppercase text-nja-green mb-8 font-mono">Start a Project //</h2>
-				<form action="https://formspree.io/f/xreabrne" method="POST" class="flex flex-col gap-6 text-left">
-					<div class="flex flex-col gap-2">
-						<label class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">Email Address</label>
-						<input
-							type="email"
-							name="email"
-							placeholder="TU@EMAIL.COM"
-							required
-							class="bg-transparent border-b border-white/10 py-4 outline-none focus:border-nja-green transition-colors font-mono text-sm uppercase tracking-widest"
-						/>
-					</div>
-					<div class="flex flex-col gap-2">
-						<label class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">Message</label>
-						<textarea
-							name="message"
-							placeholder="¿EN QUÉ PODEMOS AYUDARTE?"
-							rows="4"
-							required
-							class="bg-transparent border-b border-white/10 py-4 outline-none focus:border-nja-green transition-colors font-mono text-sm uppercase tracking-widest resize-none"
-						></textarea>
-					</div>
-					<button type="submit" class="mt-8 py-4 border border-white/10 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all">
-						Enviar Solicitud // →
-					</button>
-				</form>
+		<section id="contacto" class="py-40 flex flex-col items-center">
+			<div class="w-full max-w-2xl p-12 bg-[#0a0a0a] border border-white/5 rounded-[2rem] text-center">
+				<h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6">¿Listo para escalar?</h2>
+				<p class="text-gray-500 mb-12 text-lg">Hablemos sobre tu próximo ecosistema digital.</p>
+				<a href="mailto:info@njatech.solutions" class="inline-block px-12 py-5 bg-white text-black font-black uppercase text-xs tracking-[0.4em] rounded-full hover:bg-nja-green transition-all hover:scale-105 active:scale-95">
+					Iniciar Proyecto
+				</a>
 			</div>
 		</section>
 
-		<footer class="py-20 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/5 mt-20">
-			<div class="text-left">
-				<p class="text-xs font-bold tracking-widest uppercase text-white mb-2">NJA TECH SOLUTIONS</p>
-				<p class="text-[10px] text-gray-500 tracking-widest uppercase">Building digital excellence from Río Tercero, Córdoba.</p>
-			</div>
-			<div class="flex gap-8">
-				<a href="https://instagram.com/reflexsysok/" target="_blank" class="text-[10px] font-bold tracking-widest uppercase hover:text-nja-green transition-colors">Instagram</a>
-				<a href="https://github.com/emimo" target="_blank" class="text-[10px] font-bold tracking-widest uppercase hover:text-nja-green transition-colors">GitHub</a>
-				<a href="mailto:tu-email@dominio.com" class="text-[10px] font-bold tracking-widest uppercase hover:text-nja-green transition-colors">Email</a>
+		<footer class="py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] font-bold tracking-[0.4em] text-gray-600 uppercase">
+			<p>© NJA TECH SOLUTIONS // RÍO TERCERO</p>
+			<div class="flex gap-10 mt-6 md:mt-0">
+				<a href="https://github.com/emimo" class="hover:text-white transition-colors">GitHub</a>
+				<a href="https://instagram.com/reflexsysok/" class="hover:text-white transition-colors">Instagram</a>
+				<a href="#" class="hover:text-white transition-colors">LinkedIn</a>
 			</div>
 		</footer>
-
 	</main>
 </Layout>
