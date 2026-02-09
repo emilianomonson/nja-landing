@@ -1,11 +1,66 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Services from '../components/Services.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="NJA TECH SOLUTIONS | Software Development">
+	<main class="max-w-6xl mx-auto px-6">
+
+		<section class="h-[90vh] flex flex-col justify-center items-start relative">
+			<div class="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/5 mb-10">
+				<div class="w-2 h-2 rounded-full bg-nja-green shadow-[0_0_10px_#00FF41]"></div>
+				<span class="text-[10px] tracking-[0.2em] font-bold uppercase text-gray-300">Available for projects</span>
+			</div>
+
+			<h1 class="text-7xl md:text-[120px] font-extrabold tracking-tighter leading-[0.85] mb-8">
+				NJA <span class="text-transparent bg-clip-text bg-gradient-to-r from-nja-green to-nja-cyan">TECH</span>
+			</h1>
+
+			<div class="flex flex-col md:flex-row md:items-center gap-8 w-full">
+				<p class="text-lg md:text-xl text-gray-400 max-w-md font-light leading-relaxed">
+					Desarrollo de ecosistemas digitales avanzados con <span class="text-white">Angular</span> y <span class="text-white">Spring Boot</span>.
+				</p>
+				<div class="h-[1px] flex-grow bg-white/5 hidden md:block"></div>
+				<a href="#proyectos" class="group flex items-center gap-4 text-sm font-bold uppercase tracking-widest hover:text-nja-green transition-colors">
+					Explorar Proyectos
+					<span class="text-xl group-hover:translate-x-2 transition-transform">→</span>
+				</a>
+			</div>
+		</section>
+
+		<section id="proyectos" class="py-20 border-y border-white/5">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+				<div class="group cursor-pointer">
+					<div class="relative aspect-video bg-[#0a0a0a] border border-white/10 rounded-sm mb-6 overflow-hidden flex items-center justify-center">
+						<div class="absolute inset-0 bg-gradient-to-br from-nja-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<span class="text-gray-800 font-black text-5xl tracking-tighter group-hover:text-nja-green/20 transition-colors">01</span>
+					</div>
+					<h3 class="text-sm font-bold tracking-widest uppercase mb-2">Gestión de Pedidos Full-Stack</h3>
+					<p class="text-xs text-gray-500 font-mono italic">JAVA // SPRING BOOT // ANGULAR // SQL</p>
+				</div>
+				<div class="group cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
+					<div class="aspect-video bg-[#0a0a0a] border border-white/10 rounded-sm mb-6 flex items-center justify-center italic text-gray-700 text-xs">
+						Próximo Proyecto SaaS...
+					</div>
+					<h3 class="text-sm font-bold tracking-widest uppercase mb-2">E-commerce Template</h3>
+					<p class="text-xs text-gray-500 font-mono italic">ASTRO // TAILWIND // STRIPE</p>
+				</div>
+			</div>
+		</section>
+
+		<Services />
+
+		<footer class="py-20 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/5 mt-20">
+			<div class="text-left">
+				<p class="text-xs font-bold tracking-widest uppercase text-white mb-2">NJA TECH SOLUTIONS</p>
+				<p class="text-[10px] text-gray-500 tracking-widest uppercase">Building digital excellence from Río Tercero, Córdoba.</p>
+			</div>
+			<div class="flex gap-8">
+				<a href="#" class="text-[10px] font-bold tracking-widest uppercase hover:text-nja-green transition-colors">Instagram</a>
+				<a href="#" class="text-[10px] font-bold tracking-widest uppercase hover:text-nja-green transition-colors">GitHub</a>
+				<a href="mailto:info@njatech.solutions" class="text-[10px] font-bold tracking-widest uppercase hover:text-nja-green transition-colors">Email</a>
+			</div>
+		</footer>
+
+	</main>
 </Layout>

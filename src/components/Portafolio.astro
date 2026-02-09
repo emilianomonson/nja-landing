@@ -1,0 +1,28 @@
+---
+const projects = [
+  {
+    title: "Gestión de Pedidos Full-Stack",
+    tech: "Spring Boot • Angular • SQL",
+    link: "#" // Aquí irá el link a tu GitHub
+  },
+  {
+    title: "SaaS Starter Template",
+    tech: "Astro • Tailwind • Stripe",
+    link: "#"
+  }
+];
+---
+
+<section id="proyectos" class="py-32 border-t border-white/5">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    {projects.map(project => (
+      <a href={project.link} class="group block">
+        <div class="aspect-video bg-[#0f0f0f] border border-white/5 rounded-sm mb-6 overflow-hidden flex items-center justify-center group-hover:border-nja-green/30 transition-colors">
+            <span class="text-gray-700 font-bold tracking-tighter text-4xl group-hover:text-nja-green/20 transition-colors">NJA_PROJECT</span>
+        </div>
+        <h3 class="text-xl font-bold mb-1 uppercase tracking-tight">{project.title}</h3>
+        <p class="text-sm text-gray-500 font-mono uppercase tracking-widest">{project.tech}</p>
+      </a>
+    ))}
+  </div>
+</section>
